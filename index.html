@@ -911,7 +911,7 @@
 <!-- The Success Message (Hidden by default) -->
 <div id="successMessage" style="display: none;">
   <h3>Thank you!</h3>
-  <p>Your message has been sent successfully.</p>
+  <p>For a quick response, please call or text me at [+91 7060149072]..</p>
 </div>
         </section>
 
@@ -936,7 +936,22 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    // 1. Prevent the default page reload
+    event.preventDefault(); 
+    
+    // 2. Hide the form
+    this.style.display = 'none'; 
+    
+    // 3. Show the success message
+    document.getElementById('successMessage').style.display = 'block';
+    
+    // 4. (Optional) Submit data to your backend/form handler here using fetch()
+    // const formData = new FormData(this);
+    // fetch('your-server-endpoint', { method: 'POST', body: formData });
+  });
+</script>
 </body>
 
 </html>
